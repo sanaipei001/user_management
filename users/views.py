@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .forms import RegistrationForm, ProfileForm, UserUpdateForm, PasswordChangeForm
@@ -57,3 +57,9 @@ def change_password(request):
     else:
         form = PasswordChangeForm(user=request.user)
     return render(request, 'users/change_password.html', {'form': form})
+
+@login_required
+def logout_view(request):
+    logout(request)
+    messages.success(request, 'You have been logged out successfully.')
+    return render(request, 'users/logout.html')

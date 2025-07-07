@@ -1,14 +1,33 @@
 {% extends 'users/base.html' %}
-
+{% load widget_tweaks %}
 {% block content %}
-<h2>Verify Your Account</h2>
-<p>Enter the verification token sent to your email.</p>
-<form method="post">
-    {% csrf_token %}
-    <div class="form-group">
-        <label for="token">Verification Token:</label>
-        <input type="text" name="token" class="form-control" required>
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h2 class="card-title text-center mb-4">Verify Your Account</h2>
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert {% if message.tags %}alert-{{ message.tags }}{% else %}alert-info{% endif %} alert-dismissible fade show" role="alert">
+                                {{ message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="id_token" class="form-label">Verification Token</label>
+                            <input type="text" name="token" id="id_token" class="form-control" required>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">Verify</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-    <button type="submit" class="btn btn-primary">Verify</button>
-</form>
+</div>
 {% endblock %}

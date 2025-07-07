@@ -1,0 +1,14 @@
+{% extends 'users/base.html' %}
+
+{% block content %}
+<h2>Verify Your Account</h2>
+<p>Enter the verification token sent to your email.</p>
+<form method="post">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="token">Verification Token:</label>
+        <input type="text" name="token" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Verify</button>
+</form>
+{% endblock %}

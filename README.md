@@ -1,4 +1,6 @@
-Introduction
+##Introduction
+
+
 Imagine a web app where a vibrant blue navbar sticks with you as you scroll, guiding you through registration, login, and profile updates with ease.
 Prerequisites
 Before cloning, ensure you have:
@@ -9,17 +11,12 @@ Git
 
 Virtualenv (optional but recommended) 
 
-Docker (optional for containerized setup) 
-
-A free PythonAnywhere account for deployment 
-
 Clone and Set Up the Project
 Ready to bring this app to life? Follow these steps to clone and run it locally! 
 
 Clone the Repository:
 
 git clone https://github.com/your-username/user_management.git
-cd user_management
 Create a Virtual Environment:
 
 python -m venv venv

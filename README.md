@@ -1,67 +1,46 @@
-Django User Management Project
-A simple Django-based user management system with registration, mock email verification, profile management, and admin features.
-Features
+Introduction
+Imagine a web app where a vibrant blue navbar sticks with you as you scroll, guiding you through registration, login, and profile updates with ease.
+Prerequisites
+Before cloning, ensure you have:
 
-User Registration: Users can sign up with a username, email, and password.
-User Verification: Mock email verification using a database token.
-Profile Management: View/edit profile and change password.
-Admin Panel: Admins can view/edit all user details.
-Normal Users: Restricted to managing their own profile.
-Tests: Unit tests for models and views.
+Python 3.13.2 
 
+Git 
 
-Installation
+Virtualenv (optional but recommended) 
 
-Clone the repository:git clone <your-cloned-github-repo-url>
+Docker (optional for containerized setup) 
 
+A free PythonAnywhere account for deployment 
 
-Create a virtual environment:python -m venv venv
+Clone and Set Up the Project
+Ready to bring this app to life? Follow these steps to clone and run it locally! 
+
+Clone the Repository:
+
+git clone https://github.com/your-username/user_management.git
+cd user_management
+Create a Virtual Environment:
+
+python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
+Install Dependencies: Ensure your requirements.txt includes:
 
+django==5.2.4
+gunicorn==22.0.0
+django-widget-tweaks==1.5.0
+Then run:
 
-Install dependencies:pip install -r requirements.txt
+pip install -r requirements.txt
+Apply Migrations: Set up the SQLite database:
 
+python manage.py migrate
+Create a Superuser: For admin access:
 
-Apply migrations:python manage.py migrate
+python manage.py createsuperuser
 
+python manage.py collectstatic
+Run the Development Server:
 
-Create a superuser:python manage.py createsuperuser
-
-
-Run the development server:python manage.py runserver
-
-
-Access the app at http://localhost:8000 and admin at http://localhost:8000/admin.
-
-Running Tests
-python manage.py test
-
-
-
-Access at http://localhost:8000.
-
-Git Commit History
-
-Initial project setup: Created Django project and users app.
-Added UserProfile model: Includes bio and verification fields.
-Implemented user registration: Added form, view, and templates.
-Added mock email verification: Token-based system.
-Implemented profile management: View/edit profile and password change.
-Configured admin panel: Enabled user management.
-Added unit tests: For models and views.
-
-
-Development Process
-This project was built to create a user management system with Django, focusing on simplicity and functionality. Key steps included:
-
-Setup: Initialized Django with a users app, using SQLite for simplicity.
-Models: Created a UserProfile model to extend Django’s User model with bio and verification fields.
-Registration: Used UserCreationForm with an email field, ensuring secure user creation.
-Verification: Implemented a mock email verification system using database tokens, as real email integration was out of scope.
-Profile Management: Added views for profile editing and password changes, restricted to authenticated users.
-Admin Panel: Leveraged Django’s admin interface for user management.
-Testing: Wrote unit tests to verify model creation and view accessibility.
-Docker: Added containerization for consistent development environments.
-Deployment: Deployed on Render for a live demo.
-Challenges: Configuring Django’s authentication system and ensuring user restrictions were tricky but resolved using @login_required and form validation.
-Lessons Learned: Django’s built-in auth system is powerful but requires careful configuration for custom user flows.
+python manage.py runserver
+Access the app at http://localhost:8000 and the admin panel at http://localhost:8000/admin.

@@ -8,13 +8,11 @@ Profile Management: View/edit profile and change password.
 Admin Panel: Admins can view/edit all user details.
 Normal Users: Restricted to managing their own profile.
 Tests: Unit tests for models and views.
-Docker: Containerized setup for development.
-Deployment: Live on Render (add link after deployment).
+
 
 Installation
 
-Clone the repository:git clone <your-github-repo-url>
-cd user_management
+Clone the repository:git clone <your-cloned-github-repo-url>
 
 
 Create a virtual environment:python -m venv venv
@@ -38,24 +36,9 @@ Access the app at http://localhost:8000 and admin at http://localhost:8000/admin
 Running Tests
 python manage.py test
 
-Docker Setup
-
-Install Docker and Docker Compose.
-Build and run:docker-compose up --build
 
 
 Access at http://localhost:8000.
-
-Deployment
-
-Deployed on Render: (Add live link here)
-Follow Render’s Django guide: https://render.com/docs/deploy-django
-
-Screenshots
-
-Registration Page: (Add screenshot)
-Profile Page: (Add screenshot)
-Admin Panel: (Add screenshot)
 
 Git Commit History
 
@@ -66,9 +49,7 @@ Added mock email verification: Token-based system.
 Implemented profile management: View/edit profile and password change.
 Configured admin panel: Enabled user management.
 Added unit tests: For models and views.
-Added Docker setup: Dockerfile and docker-compose.
-Prepared for deployment: Added gunicorn and updated settings.
-Finalized README and article: Added screenshots and process details.
+
 
 Development Process
 This project was built to create a user management system with Django, focusing on simplicity and functionality. Key steps included:
